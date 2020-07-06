@@ -1,0 +1,248 @@
+JavaSE部分
+一、Java基础
+1、为什么重写equals还要重写hashcode
+	hashCode规则:
+	两个对象相等，hashcode一定相等  equals方法是比较内存地址，hashcode也是根据内存地址用哈希算法生成的，重写equals方法后，原来不相同的两个对象相同的时候，但hashcode可能仍然不同
+	两个对象不等，hashcode有可能相等
+	hashcode不等，两对象一定不等
+	hashcode相等，两对象不一定相等
+2、说一下map的分类和常见的情况
+	HashMap结构是数组+链表（节点超过八个自动转成红黑树）
+	ConcurrentHashMap1.8之前是使用segment分段锁实现，1.8之后直接采用一个大数组使用cas和synchronized（针对首节点进行加锁）
+	TreeMap是利用红黑树构造的有序map
+	LinkedHashMap底层是双向链表，可以实现LRU
+3、Object若不重写hashCode()的话，hashCode()如何计算出来的？
+	public native int hashCode();操作系统本地实现
+4、==比较的是什么？
+	内存地址
+5、若对一个类不重写，它的equals()方法是如何比较的？
+	比较内存地址
+6、java8新特性
+	Lambda表达式和函数式接口
+	接口的默认方法和静态方法
+	方法引用
+	重复注解
+	更好的类型推断
+	拓宽注解的应用场景
+	...(待补充)
+7、Lamda表达式的优缺点
+	优点：
+	简洁、非常容易并行计算
+	缺点：
+	不容易调试，代码可读性差
+8、自动拆装箱
+	原始类型值转对象、对象转原始类型值
+9、什么是值传递和引用传递
+	值传递是对基本类型变量而言的,传递的是该变量的一个副本,改变副本不影响原变量. 引用传递一般是对于对象型变量而言的,传递的是该对象地址，对引用对象进行操作会同时改变原对象 
+10、数组(Array)和列表(ArrayList)有什么区别？什么时候应该使用Array而不是ArrayList？
+	Array数组可以包含基本类型和对象类型，
+	ArrayList却只能包含对象类型
+11、String是最基本的数据类型吗?
+	String是引用数据类型
+12、int和Integer有什么区别
+	int是基本数据类型，Integer是int的包装类，Integer能表示null, int则不能
+13、请你说明String 和StringBuffer的区别
+	String		    大小不可变	线程安全
+	StringBuffer	大小可变	    线程安全
+	StringBuilder	大小可变     非线程安全
+14、如何输出一个某种编码的字符串
+	String testStr = new String(str.getBytes(), "UTF-8");
+15、&和&&的区别？
+	按位与 逻辑与
+16、在Java中，如何跳出当前的多重嵌套循环？
+	跳出一层break，结束return，跳出当前这一次continue，或者添加一个标记，break 标记；接跳到标记那
+17、你能比较一下Java和JavaSciprt吗
+	没啥好比较的 后端语言和前端脚本语言 编译型语言与解释性语言
+18、简述正则表达式及其用途
+	模式匹配，正则表达式通常被用来检索、替换那些符合某个模式(规则)的文本
+19、Java中是如何支持正则表达式操作的？
+	String类提供了支持正则表达式操作的方法
+	可以用Pattern类表示正则表达式对象
+20、如何理解封装、继承、多态
+	封装：把客观事务封装成抽象的类，隐藏方法实现，属性通过get、set方法对外提供访问接口
+	继承：子类可以获得父类所有非私有的属性和方法，并且可以重写继承的方法，可以增加新的属性和方法
+	多态：允许将子类类型的指针赋值给父类类型的指针
+21、访问修饰符
+	default(默认)：同一个包下类
+	private：该类
+	protected：该类及子类
+	public：所有类
+二、关键字
+1、介绍一下Syncronized锁，如果用这个关键字修饰一个静态方法，锁住了什么？如果修饰成员方法，锁住了什么？
+	在synchronized里面，包含有三种常见的锁状态：
+	对于普通的同步方法： 
+	锁是当前的对象 
+	对于静态函数的同步方法： 
+	锁是指引用当前类的class对象 
+	对于同步方法块的内容： 
+	锁是指Synchonized括号里配置的对象
+2、介绍一下volatile？
+	使用volatile修饰的变量会强制将修改的值立即写入主存，主存中值的更新会使缓存中的值失效
+	不具有原子性
+3、锁有了解嘛，说一下Synchronized和lock
+	Synchronized是关键字，lock是接口
+	lock需要手动释放锁，Synchronized不如lock灵活
+4、讲一讲Java里面的final关键字怎么用的？
+	修饰类：不可被继承
+	修饰方法：不可被覆盖
+	修饰变量：变量一旦被赋值就不可更改，且必须由程序员显式指定变量的值
+三、面向对象
+1、wait方法底层原理
+
+2、Java有哪些特性，举个多态的例子。
+
+3、String为啥不可变？
+
+4、类和对象的区别
+
+5、请列举你所知道的Object类的方法。
+	getClass()
+	equals()
+	clone()
+	toString()
+	wait()
+	notify()
+	notifyAll()
+6、重载和重写的区别？相同参数不同返回值能重载吗？
+	重载：同一个类中，方法名相同，参数列表不同
+	重写：子类修改从父类继承的某个方法的具体实现
+7、”static”关键字是什么意思？Java中是否可以覆盖(override)一个private或者是static的方法？
+	不可以
+8、String能继承吗？
+	
+9、StringBuffer和StringBuilder有什么区别，底层实现上呢？
+	
+10、类加载机制，双亲委派模型，好处是什么？
+	
+11、静态变量存在哪?
+	1.8前：方法区   1.8后：堆
+12、讲讲什么是泛型？
+
+13、解释extends 和super 泛型限定符-上界不存下界不取
+
+14、是否可以在static环境中访问非static变量？
+
+15、谈谈如何通过反射创建对象？
+
+16、Java支持多继承么？
+
+17、接口和抽象类的区别是什么？
+
+18、Comparable和Comparator接口是干什么的？列出它们的区别。
+
+19、面向对象的特征有哪些方面
+
+20、final, finally, finalize的区别。
+
+21、Overload和Override的区别。Overloaded的方法是否可以改变返回值的类型?
+
+22、abstract class和interface有什么区别?
+
+23、Static Nested Class 和 Inner Class的不同
+
+24、当一个对象被当作参数传递到一个方法后，此方法可改变这个对象的属性，并可返回变化后的结果，那么这里到底是值传递还是引用传递?
+
+25、Java的接口和C++的虚类的相同和不同处。
+
+26、JAVA语言如何进行异常处理，关键字：throws,throw,try,catch,finally分别代表什么意义？在try块中可以抛出异常吗？
+
+27、内部类可以引用他包含类的成员吗？有没有什么限制？
+	除了静态内部类都可以，静态内部类只能访问包含类的静态变量和静态方法。
+	内部类及Lambda表达式相关
+	内部类：
+		成员内部类
+			成员内部类——就是位于外部类成员位置的类
+			特点：可以使用外部类中所有的成员变量和成员方法（包括private的）
+		局部内部类
+			局部内部类——就是定义在一个方法或者一个作用域里面的类
+			特点：主要是作用域发生了变化，只能在自身所在方法和属性中被使用，从内部类中访问方法内变量，需要将变量声明为最终类型
+		静态内部类
+			我们所知道static是不能用来修饰类的,但是成员内部类可以看做外部类中的一个成员,所以可以用static修饰,这种用static修饰的内部类我们称作静态内部类,也称作嵌套内部类.
+			特点：不能使用外部类的非static成员变量和成员方法
+		匿名内部类
+			一个没有名字的类，是内部类的简化写法
+	为什么要使用内部类？
+		内部类不想被外部类使用
+		内部类是临时的
+		内部类的逻辑需要使用当前上下文
+28、两个对象值相同(x.equals(y) == true)，但却可有不同的hash code说法是否正确？
+
+29、重载（Overload）和重写（Override）的区别。重载的方法能否根据返回类型进行区分？
+重载发生在同一个类里面，方法名相同，参数类型或者数量不同。不能
+重写一般发生在子类中，子类重新定义父类同名方法。
+30、如何通过反射获取和设置对象私有字段的值？
+
+31、谈一下面向对象的"六原则一法则"。
+
+32、请问Query接口的list方法和iterate方法有什么区别？
+
+33、Java中的方法覆盖(Overriding)和方法重载(Overloading)是什么意思？
+
+34、Java中，什么是构造函数？什么是构造函数重载？什么是复制构造函数？
+
+35、hashCode()和equals()方法有什么联系？
+四、集合
+1、HashMap和ConcurrentHashMap的区别？
+hashmap是线程不安全的，put时在多线程情况下，会形成环从而导致死循环。
+CoucurrentHashMap是线程安全的，采用分段锁机制，减少锁的粒度。
+2、hashMap内部具体如何实现的？
+hashMap是数组加链表是实现的，当链表节点数超过8个时，会自动转化为红黑树
+3、如果hashMap的key是一个自定义的类，怎么办？
+重写hashcode()和equals方法
+4、ArrayList和LinkedList的区别，如果一直在list的尾部添加元素，用哪个效率高？
+扩容 new node对象 
+数据量小的时候，linkedlist快，数据量大的时候，arraylsit快
+5、HashMap底层，负载因子，为啥是2^n？
+
+6、ConcurrentHashMap锁加在了哪些地方？
+
+7、TreeMap底层，红黑树原理？
+
+8、concurrenthashmap有啥优势，1.7，1.8区别？
+
+9、ArrayList是否会越界？
+不会，自动扩容
+10、什么是TreeMap?
+
+11、ConcurrentHashMap的原理是什么？
+
+12、Java集合类框架的基本接口有哪些？
+Collection:list set 
+Map
+13、为什么集合类没有实现Cloneable和Serializable接口？
+
+14、什么是迭代器？
+迭代器是用来便利集合的
+15、Iterator和ListIterator的区别是什么？
+Iterator可以便利set和list，listIterator只能便利list
+后者功能更强大
+16、快速失败(fail-fast)和安全失败(fail-safe)的区别是什么？
+
+17、HashMap和Hashtable有什么区别？
+hashmap非线程安全，hashtable线程安全
+hashmap性能更好
+18、ArrayList和LinkedList有什么区别？
+ArrayList的实现用的是数组，LinkedList是基于链表，ArrayList适合查找，LinkedList适合增删
+19、ArrayList,Vector,LinkedList的存储性能和特性是什么？
+ArrayList 和Vector都是使用数组方式存储数据,但Vector是线程安全的，所以存储时会比Arraylist慢
+20、Collection 和 Collections的区别。
+接口和工具类
+21、你所知道的集合类都有哪些？主要方法？
+主要有两种。一种Collection,另一种Map。其中Collection包括Set、List和Queue，Set(无序无重)又包括HashSet、LinkedHashSet及TreeSet，List(有序有重)又包括ArrayList、LinkedList及Vector；其中Map包括HashTable、LinkedHashMap、HashMap及TreeMap
+22、List、Set、Map是否继承自Collection接口？
+Map并非继承Collection接口
+23、List、Map、Set三个接口存取元素时，各有什么特点？
+List集合有序可重复，Set集合无序不重复。Map集合是键值对映射，值可以重复，但键不可以重复
+24、String StringBuilder StringBuffer
+String是final修饰的，不可变
+运行速度StringBuilder>StringBuffer>String
+StringBuffer是线程安全的
+25、静态变量和常量的区别
+静态变量可修改，常量不可修改
+五、线程
+六、锁
+七、JDK
+八、反射
+九、JVM
+十、GC
+十一、IO、NIO、AIO

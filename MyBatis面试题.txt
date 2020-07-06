@@ -1,0 +1,8 @@
+Mybatis部分
+1、解释一下MyBatis中命名空间（namespace）的作用
+	Mybatis中namespace用于绑定dao接口，dao接口的方法对应mapper中的sql语名
+2、MyBatis中的动态SQL是什么意思
+	根据用户提供的参数，动态决定查询语句依赖的查询条件或者SQL语句的内容
+3、Mybatis和Hibernate区别？
+	Hibernate：一个全自动的orm框架，对象关系映射能力比较强，不需要编写SQL就能对数据库进行操作。操作简单开发快，但是入门门槛比较高，对于SQL的修改和优化比较困难。比较适合需求变化不大的中小型项目：OA，ERP、管理系统等
+	MyBatis：是一种半自动的orm框架，专注于SQL本身，对SQL修改和优化比较简单，支持对象关系映射，需要是手动实现SQL。比较适合需求变化比较多的互联网项目。

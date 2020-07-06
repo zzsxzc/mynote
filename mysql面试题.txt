@@ -1,0 +1,20 @@
+1、关系型数据库
+	一个关系型数据库就是由二维表及其之间的联系组成的一个数据组织。简单说以行和列组成的表存储数据的数据库就可以称为关系型数据库。
+mysql部分
+2、mysql常见的几种优化策略
+	https://www.cnblogs.com/wangsen/p/10871996.html
+	1、使用索引
+	2、避免判断null值
+	3、避免不等值判断
+	4、避免使用or逻辑
+	5、慎用in和not in
+	...
+3、mysql面试题知乎版
+	https://www.zhihu.com/search?type=content&q=mysql%E9%9D%A2%E8%AF%95%E9%A2%98
+4、数据库分页如何实现
+5、ACID特性
+	原子性：要么全都完成，要么全都不完成
+	一致性
+	隔离性
+	持久性
+	
