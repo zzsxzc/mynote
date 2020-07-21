@@ -2,8 +2,21 @@
 1、初级Java工程师
 	Spring
 	SpringMVC
-	Mysql
+	SpringBoot
+	Mysql 性能调优
 	Mybatis
+	zookeeper
+	dubbo
+	kafka
+	redis
+	nosql
+	svn 
+	git
+	gradle
+	maven
+	springdata
+	vue
+	react
 
 
 
