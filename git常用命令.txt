@@ -1,6 +1,6 @@
-基本操作
+﻿基本操作
 	git init
 	git add README.md  (git add .   提交当前目录下的所有文件)
 	git commit -m "first commit"
-	git remote add origin https://github.com/ixiaochen/ChenLibrary.git
+	git remote add origin https://github.com/ixiaochen/chenLibrary.git
 	git push -u origin master
