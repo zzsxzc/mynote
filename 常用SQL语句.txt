@@ -87,5 +87,7 @@
 特殊:
     1.查询表中某个字段重复的数据
     SELECT * FROM tablename a WHERE (a.name) IN (SELECT * FORM tablename GROUP BY name HAVING COUNT(*) > 1);
+    2.查询表中最大的10条数据
+    select * from tbl_emp ORDER BY emp_id desc limit 0,10
 
 
