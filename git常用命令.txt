@@ -4,3 +4,10 @@
 	git commit -m "first commit"
 	git remote add origin https://github.com/ixiaochen/chenLibrary.git
 	git push -u origin master
+
+查看远程仓库地址
+	git remote -v
+查看远程仓库简称
+	git remote 
+删除当前与远程仓库的连接
+	git remote rm origin(远程仓库简称)
