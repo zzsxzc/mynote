@@ -1,0 +1,26 @@
+1、一级缓存失效的四种情况
+  	1.sqlSession不同
+  	2.sqlSession相同，查询条件不同
+  	3.sqlSeeeion相同,两次查询间执行了增删改操作
+  	4.sqlSession相同，手动清除了缓存
+  	局限性:存在于session的生命周期，时限太短，可重用性不强
+2、二级缓存 
+	工作机制:
+		全局缓存，基于namespace，一个namespace对应一个二级缓存
+		会话关闭，一级缓存的数据会被保存到二级缓存中
+		不同namespace查出的数据会被放在自己的缓存中 Map
+	使用步骤:
+		1.开启全局二级缓存配置 mybatis配置xml 添加 <setting name="cacheEnabled" value="true"/>
+		2.对应Mapper.xml类 ，添加<cache></cache> 个别sql语句禁用缓存 <select ... useCache="false">
+		3.注解版sql，在对应mapper接口上添加@CacheNamespace
+			和缓存有关的配置/属性:
+				 
+	缓存回收策略:
+		LRU 默认 最近最少使用 移除最长时间不被使用的
+		FOFO 先进先出
+		SOFT
+		WEAK
+	flushInteral:缓存刷新间隔 多长时间清空一次 默认不清空
+	readonly:是否只读
+	size:缓存存放多少元素
+

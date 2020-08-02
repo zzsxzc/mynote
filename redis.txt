@@ -1,1 +1,9 @@
-https://www.cnblogs.com/jasontec/p/9699242.html
+1、https://www.cnblogs.com/jasontec/p/9699242.html
+2、Springboot整合redis
+3、Redis常见五大数据类型
+	String(字符串)
+	List(列表)
+	Set(集合)
+	Hash(散列)
+	ZSet(有序集合)
+	
