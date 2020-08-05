@@ -13,5 +13,15 @@
 	变量不能改变
 	方法不能重写
 	类不能继承
+5、hashMap
+	存储结构:
+		数组+链表+红黑树(jdk8)
+			链表长度大于8时转换为红黑树
+	非线程安全
+		解决方法：
+			使用Collections的synchronizedMap方法或者直接使用ConcurrentHashMap
+	hash算法和扩容机制
+		
+
 
 
