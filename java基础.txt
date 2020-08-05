@@ -20,8 +20,11 @@
 	非线程安全
 		解决方法：
 			使用Collections的synchronizedMap方法或者直接使用ConcurrentHashMap
-	hash算法和扩容机制
-		
+	hash算法
+	扩容机制
+		扩容后的容量是之前容量的两倍。
+
+
 
 
 
