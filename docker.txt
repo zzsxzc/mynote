@@ -1,3 +1,37 @@
-1、docker images
-2、docker run -d -p 6379:6379 --name 自己起的名 仓库名
-3、docker rm
+1、安装docker 
+	yum install docker
+2、启动关闭docker
+	systemctl start docker
+	systemctl stop docker
+3、设置开机启动
+	systemctl enable docker
+4、从dockerhub查找
+	dockers search mysql
+5、拉取
+	docker pull + 名字 + rag(默认为latest)
+6、查看所有镜像
+	docker images
+7、删除镜像
+	docker rmi 镜像名
+8、启动镜像(以redis为例)
+	docker run -d -p 6379:6379 --name 自己起的名 仓库名
+9、停止镜像
+	docker stop 镜像名或者镜像id
+10、删除已经运行的镜像实例
+	docker drop 镜像名或者镜像id
+11、查看所有镜像实例
+	docker ps 
+12、查看正在运行的镜像
+	docker ps -a
+13、国内镜像加速拉取
+	容器镜像服务-->阿里云镜像加速器
+	sudo mkdir -p /etc/docker
+	sudo tee /etc/docker/daemon.json <<-'EOF'
+	{
+	  "registry-mirrors": ["https://85c6uyn5.mirror.aliyuncs.com"]
+	}
+	EOF
+	sudo systemctl daemon-reload
+	sudo systemctl restart docker
+
+
