@@ -48,7 +48,17 @@
 		explain
 8、三范式
 9、如何向表中插入日期类数据？
-	把Date格式化成 yyyy-MM-dd HH:mm:ss 直接插入即可。
+	把Date格式化成 yyyy-MM-dd HH:mm:ss 直接插入即可
+10、索引相关
+	1、创建索引
+		联合索引:
+			1、create index id_sch_type on dc_productlist_all(id,schoolName,kindOfProduct);
+			2、alter table add index id_sch_type(id,schoolName,kindOfProduct);
+	2、删除索引
+			drop index id_sch_type on dc_productlist_all;
+11、Explain
+	1、直接在被分析语句前加explain即可
+
 	
 
 	

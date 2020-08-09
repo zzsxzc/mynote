@@ -7,3 +7,83 @@
 4、页面静态化
 	提升加载速度
 5、扫描组件，将加不同注解的代码作不同的处理
+6、@RequestMapping
+	value: 标注方法对应的请求路径
+	method: 标注请求方法 REST风格简单说就是不同类型的请求使用不同的请求方式进行区别
+		常用：
+			GET 查询
+			POST 增加
+			DELETE 删除
+			PUT 修改
+	params: 用来设置客户端传到服务器的数据，支持表达式
+	headers: 设置请求头
+	可以加在方法上也可以加在类上
+		夹在类上，类所有的方法都自动拼接加载类上的路径
+	支持Ant路径风格
+		?: 匹配文件名中的一个字符
+		*: 匹配文件名中的任意多个字符
+		**: 匹配多层路径
+	映射请求占位符
+		请求路径： testController/1001/admin
+		@RequestMapping("/testConller/{id}/{username})
+		public String testController(@PathVariable("id") Integer id,@PathVariable("username") String username)
+7、RESTful
+	资源表现层状态转化 
+	使用非GET POST的其他请求方式，比如PUT和DELETE，需要注意_method
+		<form action="testRest" method="POST">
+			<input type="hidden" name="_method" value="PUT"/>
+			<input type="submit" value="测试PUT"/>
+		</form>
+	超链接传输数据的方式只能是GET
+8、获取客户端数据
+	1、在处理请求的方法中。加入相应的形参，保证形参的参数名和传过来的数据的参数名一致即可。
+	2、@RequsetParam(value="name") String userName 指定映射关系 required=false  参数是否必须 defaultValue="admin" 没有值时赋默认值
+9、@RequestHeader 获取请求头信息
+	@RequestHeader() 用法同@RequsetParam
+10、@CookieValue() 获取cookie数据
+11、使用POJO作为参数
+	直接放一个形参就行，POJO属性名的属性要与前端传来的数据的名称相同，支持级联属性
+12、使用Servlet原生API作为参数
+	HttpServletRequest ...
+13、过滤器和拦截器 filter interceptor
+	过滤器 
+		作用于客户端和DispatcherServlet之间，拦截请求，过滤相应，主要用于拦截请求
+		常见的应用场景有:
+			权限检查
+			日记操作
+			事务管理
+		操作流程:
+			实现Filter接口
+			重写doFilter方法
+				拦截请求、过滤请求
+				放行:
+					filterChain.doFilter(servletRequeat,servletResponse);
+			配置作用范围
+				配置拦截路径															
+	拦截器 作用于处理请求的过程中
+		preHandle 处理前 
+			返回true表示放行，返回false表示拦截。
+		postHandle 处理后
+			处理过程中报错可能不会执行 
+		afterCompletion 
+			后置通知 类似finally 肯定会执行
+			资源清理
+	需要在springMVC.xml里配置
+	多个拦截器的执行顺序  
+		preHandle 控制处理逻辑是否执行 最重要
+			按照拦截器数组正向顺序执行
+			执行顺序中有一个false，后面的都不会执行，上一个afterCompletion会执行
+		postHandle 
+			按照拦截器数组反向顺序执行
+		afterCompletion
+			对应的preHandle没有返回true或者没有执行的话，afterCompletion也不会执行
+			按照拦截器数组反向顺序执行
+14、异常处理
+	DefaultHandlerExceptionResolver
+	SimpleMappingExceptionResolver
+		在xml配置出现异常时的跳转页面
+15、Spring与SpringMVC的关系
+	spring是父容器
+	springMVC是子容器
+	子容器可以访问父容器中的bean,父容器不能访问子容器中的bean
+	

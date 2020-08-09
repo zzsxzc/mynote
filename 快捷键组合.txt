@@ -8,3 +8,6 @@ IDEA
 		/**+enter
 	2、类的使用情况
 		ALT+F7
+Eclipse
+	1、打开类
+		ctrl+shift+T

@@ -8,3 +8,7 @@
 	有时候处理连接问题，最简单也是组容易处理的的原因就是防火墙问题
 	centOS
 		systemctl stop firewalld
+4、查看进程
+	ps aux|grep +docker实例名(例)
+5、杀死进程
+	kill -9 进程id
