@@ -1,4 +1,4 @@
-1、关系型数据库
+﻿1、关系型数据库
 	一个关系型数据库就是由二维表及其之间的联系组成的一个数据组织。简单说以行和列组成的表存储数据的数据库就可以称为关系型数据库。
 2、mysql常见的几种优化策略
 	1、使用索引
@@ -50,10 +50,14 @@
 9、如何向表中插入日期类数据？
 	把Date格式化成 yyyy-MM-dd HH:mm:ss 直接插入即可
 10、索引相关
+	mysql主键默认是索引
 	1、创建索引
 		联合索引:
 			1、create index id_sch_type on dc_productlist_all(id,schoolName,kindOfProduct);
 			2、alter table add index id_sch_type(id,schoolName,kindOfProduct);
+		单一索引：
+			1、create index index_name on zczpadmin(username);
+			2、show index from zczpadmin;
 	2、删除索引
 			drop index id_sch_type on dc_productlist_all;
 11、Explain
