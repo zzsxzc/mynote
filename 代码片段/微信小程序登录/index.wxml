@@ -1,0 +1,16 @@
+<!-- 测试 -->
+<view class="yanzhengmaview">
+  <view class="yanzhengmatextview">
+    <text>验证码</text>
+  </view>
+  <view class="yanzhengmainputview">
+    <input placeholder="请输入验证码"/>
+  </view>
+  <view class="yanzhengmabuttonview">
+    <button class="yanzhengmabutton"><text class="yanzhengmabuttontext">获取验证码</text></button>
+  </view>
+</view>
+
+
+        
+

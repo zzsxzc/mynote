@@ -1,0 +1,38 @@
+.yanzhengmaview{
+  width: 100%;
+  display: flex;
+  height: 100rpx;
+  background: chartreuse;
+}
+.yanzhengmatextview{
+  height: 100rpx;
+  width: 25%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.yanzhengmainputview{
+  width: 37%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.yanzhengmabuttonview{
+  width: 38%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.yanzhengmabutton{
+  width: 100%;
+  height: 100rpx;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.yanzhengmabuttontext{
+  font-size: 30rpx;
+  color:#04BE02
+}
+
