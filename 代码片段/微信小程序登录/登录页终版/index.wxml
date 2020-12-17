@@ -1,0 +1,30 @@
+<view class="titleview">
+  <text class="titletext">{{text}}</text>
+</view>
+<view class="diveline1"></view>
+<view class="telnumberview">
+  <view class="telnumbertext">
+    <text >{{label1}}</text>
+  </view>
+  <view class="telnumberinput" >
+    <input placeholder="请输入手机号"></input>
+  </view>
+</view>
+<view class="divlinemid">
+  <view class="divelinemidleft"></view>
+  <view class="divelinemidright"></view>
+</view>
+<view class="diveline2"></view>
+<view class="yanzhengmaview">
+  <view class="yanzhengmatext">
+    <text>{{label2}}</text>
+  </view>
+  <view class="yanzhengmainput">
+    <input placeholder="请输入验证码"></input>
+  </view>
+  <view class="yanzhengmabuttonview">
+    <button class= "yanzhengmabutton"><text class="yanzhengmabuttontext">获取验证码</text></button>
+  </view>
+</view>
+<view class="diveline1"></view>
+<button class="submit" type="primary">提交</button>
