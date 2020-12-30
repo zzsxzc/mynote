@@ -1,0 +1,24 @@
+﻿基本操作
+	git init
+	git add README.md  (git add .   提交当前目录下的所有文件)
+	git commit -m "first commit"
+	git remote add origin https://github.com/zzsxzc/chenLibrary.git
+	git push -u origin master
+
+查看远程仓库地址
+	git remote -v
+查看远程仓库简称
+	git remote 
+删除当前与远程仓库的连接
+	git remote rm origin(远程仓库简称)
+
+查看修改用户名和邮箱
+查看 
+git config user.name
+git config user.email
+项目内设置
+git config user.name="zzsxzc"
+git config user.email="1350111595@qq.com"
+全局设置
+git config --global user.name="zzsxzc"
+git config --global user.email="1350111595@qq.com"
