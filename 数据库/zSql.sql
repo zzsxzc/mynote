@@ -48,6 +48,9 @@
 			-- update 
 				update product set product_purchase_date ='2009-10-10' where product_id=1;
 				update product set product_sale_price = product_sale_price * 10 where product_type='厨房用具'
+			--与日期相关的修改
+				(sqlServer)
+				update T_ENG_BOMCHILD_A set FCHANGETIME='2021-02-23 16:06:24.521' where FID=531326 AND FCHANGETIME='2020-02-23 16:06:24.521';
 		-- 查
 		    -- 查询表中所有记录
 		    	select * from tablename;
