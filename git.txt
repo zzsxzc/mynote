@@ -17,8 +17,8 @@
 git config user.name
 git config user.email
 项目内设置
-git config user.name="zzsxzc"
-git config user.email="1350111595@qq.com"
+git config user.name "zzsxzc"
+git config user.email "1350111595@qq.com"
 全局设置
-git config --global user.name="zzsxzc"
-git config --global user.email="1350111595@qq.com"
+git config --global user.name "zzsxzc"
+git config --global user.email "1350111595@qq.com"
